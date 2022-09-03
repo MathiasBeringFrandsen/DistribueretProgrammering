@@ -20,6 +20,8 @@ function compareLen(s1, s2){
     }
 }
 
+console.log(compareLen("Jens", "Jørgen"))
+
 function compareIgnoreCase(s1, s2){
     if (s1.toLowerCase() == s2.toLowerCase()){
         return 0;
@@ -35,7 +37,7 @@ console.log(compareIgnoreCase("allan", "Børge"));
 function bubbleSort(array, compareMethod) {
     for (let i = array.length - 1; i >= 0; i--) {
         for (let j = 0; j <= i - 1; j++) {
-            if (compareMethod(j, j+1)) {
+            if (compareMethod(array[j], array[j+1]) == 1) {
                 swap(i,j);
             }
         }
@@ -47,4 +49,8 @@ function bubbleSort(array, compareMethod) {
     }
 }
 
-let nameArray= 
+let nameArray= ["Jan", "Alin", "Søren", "Ib", "bo", "mads", "Mads"];
+
+bubbleSort(nameArray, compareLen);
+
+console.log(nameArray);
