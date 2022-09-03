@@ -1,28 +1,28 @@
-let list = ["Ib", "Børge", "John", "Markus", "Mads", "Magnus"];
+let array = ["Ib", "Børge", "John", "Markus", "Mads", "Magnus"];
 
-for (let i = list.length - 1; i >= 0; i--) {
+for (let i = array.length - 1; i >= 0; i--) {
     for (let j = 0; j <= i - 1; j++) {
-        if (list[j] > list[j + 1]) {
-            let temp = list[j];
-            list[j] = list[j + 1];
-            list[j + 1] = temp;
+        if (array[j] > array[j + 1]) {
+            let temp = array[j];
+            array[j] = array[j + 1];
+            array[j + 1] = temp;
         }
     }
 }
 
-console.log(list);
+console.log(array);
 
-let target = "Ib"
+let element = "Ib"
 
 let indeks = -1;
 let left = 0;
-let right = list.length - 1;
+let right = array.length - 1;
 while (indeks == -1 && left <= right) {
     let middle = Math.trunc((left + right) / 2);
-    let k = list[middle];
-    if (k == target) {
+    let k = array[middle];
+    if (k == element) {
         indeks = middle;
-    } else if (k > target) {
+    } else if (k > element) {
         right = middle - 1;
     } else {
         left = middle + 1;
