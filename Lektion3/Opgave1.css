@@ -1,0 +1,22 @@
+h1 {font-style: italic;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+table.coll {
+	border-collapse: collapse;
+	height: 100px;
+}
+
+table.sep {
+	width: 200px;
+	height: 20px;
+}
+
+table.sep td{
+vertical-align: top;
+}
+
+table {
+    border: 2px solid red;
+}
