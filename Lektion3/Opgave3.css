@@ -1,0 +1,13 @@
+#container {
+    margin: 30px auto;
+    padding: 5px;
+    
+    display: grid;
+    grid-template-columns: 50px 100px;
+    grid-template-rows: repeat(3, 50px);
+    gap: 30px;
+}
+
+#kryds-og-link {
+    grid-column-start: 2;
+}
