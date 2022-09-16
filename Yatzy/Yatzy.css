@@ -1,0 +1,44 @@
+#containerAll {
+  border: 1px solid rgb(0, 0, 0);
+  margin: 30px auto;
+  padding: 10px;
+  background-color: whitesmoke;
+  width: 500px;
+  display: grid;
+  grid-template-rows: 200px 1000px;
+}
+
+#containerDice {
+  border: 1px solid rgb(0, 0, 0);
+  padding: 10px;
+  background-color: whitesmoke;
+
+  grid-area: 1/1;
+
+  display: grid;
+  grid-template-columns: 40px 100px 40px;
+  grid-template-rows: 30px 30px;
+}
+
+#containerScore {
+  border: 1px solid rgb(0, 0, 0);
+  padding: 10px;
+  background-color: whitesmoke;
+  grid-area: 2/1;
+
+  display: grid;
+  grid-template-columns: repeat(4, 30px);
+  grid-template-rows: repeat(15, 50px);
+}
+
+.Score {
+  grid-column-start: 1;
+  grid-column-end: 15;
+}
+
+.Sum {
+grid-column-start: 3 ;
+grid-column-end: 3;
+grid-row-start: 6;
+grid-row-end: 6;
+}
