@@ -1,101 +1,121 @@
-.<!DOCTYPE html>
-
+<!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Yatzy!</title>
     <link rel="stylesheet" href="Yatzy.css" />
-  </head>
-  <body>
-    <div id="containerAll">
-      <div id="containerDice">
-        <table class="Dice">
-          <tr>
-            <td><img src="die1.png" /></td>
-            <td><img src="die1.png" /></td>
-            <td><img src="die1.png" /></td>
-            <td><img src="die1.png" /></td>
-            <td><img src="die1.png" /></td>
-          </tr>
-        </table>
-        <label class="label">label 1</label>
-        <button>roll</button>
-      </div>
+</head>
 
-      <div id="containerScore">
-        <div class="Score">
-            <label for="1-s">1-s</label>
-            <input value="0" type="number" id="1-s" readonly>
+<body>
+    <div class="containerAll" id="containerAll">
+        <div class="containerDice" id="containerDice">
+            <div class="dice" id="dice">
+                <div class="die"><img src="Terning_1.png"/></div>
+                <div class="die"><img src="Terning_2.png"/></div>
+                <div class="die"><img src="Terning_3.png"/></div>
+                <div class="die"><img src="Terning_4.png"/></div>
+                <div class="die"><img src="Terning_5.png"/></div>
+            </div>
+            <div class="roller">
+                <span class="RollCounter">Antal Kast: <span id="roll-count">0</span></span>
+                <button class="RollButton" onclick="roll()">Roll</button>
+            </div>
+
         </div>
-        <div class="Score">
-            <label for="2-s">2-s</label>
-            <input value="0" type="number" id="2-s" readonly>
+
+        <div class="containerScore" id="containerScore">
+            <label class="ScoreLabel YatzyLabel">
+                1-s
+                <input class="ScoreInput" value="0" type="number" id="1-s" readonly>
+            </label>
+
+            <label class="ScoreLabel YatzyLabel">
+                2-s
+                <input class="ScoreInput" value="0" type="number" id="2-s" readonly>
+            </label>
+
+            <label class="ScoreLabel YatzyLabel">
+                3-s
+                <input class="ScoreInput" value="0" type="number" id="3-s" readonly>
+            </label>
+
+            <label class="ScoreLabel YatzyLabel">
+                4-s
+                <input class="ScoreInput" value="0" type="number" id="4-s" readonly>
+            </label>
+
+            <label class="ScoreLabel YatzyLabel">
+                5-s
+                <input class="ScoreInput" value="0" type="number" id="5-s" readonly>
+            </label>
+
+            <label class="ScoreLabel YatzyLabel">
+                6-s
+                <input class="ScoreInput" value="0" type="number" id="6-s" readonly>
+            </label>
+
+            <label class="ScoreLabel YatzyLabel">
+                One pair
+                <input class="ScoreInput" value="0" type="number" id="One pair" readonly>
+            </label>
+
+            <label class="ScoreLabel YatzyLabel">
+                Two pairs
+                <input class="ScoreInput" value="0" type="number" id="Two pairs" readonly>
+            </label>
+
+            <label class="ScoreLabel YatzyLabel">
+                Three of a kind
+                <input class="ScoreInput" value="0" type="number" id="Three of a kind" readonly>
+            </label>
+
+            <label class="ScoreLabel YatzyLabel">
+                Four of a kind
+                <input class="ScoreInput" value="0" type="number" id="Four of a kind" readonly>
+            </label>
+
+            <label class="ScoreLabel YatzyLabel">
+                Full house
+                <input class="ScoreInput" value="0" type="number" id="Full house" readonly>
+            </label>
+
+            <label class="ScoreLabel YatzyLabel">
+                Small straight
+                <input class="ScoreInput" value="0" type="number" id="Small straight" readonly>
+            </label>
+
+            <label class="ScoreLabel YatzyLabel">
+                Large straight
+                <input class="ScoreInput" value="0" type="number" id="Large straight" readonly>
+            </label>
+
+            <label class="ScoreLabel YatzyLabel">
+                Chance
+                <input class="ScoreInput" value="0" type="number" id="Chance" readonly>
+            </label>
+
+            <label class="ScoreLabel YatzyLabel">
+                Yatzy
+                <input class="ScoreInput" value="0" type="number" id="Yatzy" readonly>
+            </label>
+
+            <label class="SumLabel YatzyLabel">
+                Sum
+                <input class="SumInput" value="0" type="number" id="Sum" readonly>
+            </label>
+
+            <label class="BonusLabel YatzyLabel">
+                Bonus
+                <input class="BonusInput" value="0" type="number" id="Bonus" readonly>
+            </label>
+
+            <label class="TotalLabel YatzyLabel">
+                Total
+                <input class="TotalInput" value="0" type="number" id="Total" readonly>
+            </label>
         </div>
-        <div class="Score">
-            <label for="3-s">3-s</label>
-            <input value="0" type="number" id="3-s" readonly>
-        </div>
-        <div class="Score">
-            <label for="4-s">4-s</label>
-            <input value="0" type="number" id="4-s" readonly>
-        </div>
-        <div class="Score">
-            <label for="5-s">5-s</label>
-            <input value="0" type="number" id="5-s" readonly>
-        </div>
-        <div class="Score">
-            <label for="6-s">6-s</label>
-            <input value="0" type="number" id="6-s" readonly>
-        </div>
-        <div class="Score">
-            <label for="One pair">One pair</label>
-            <input value="0" type="number" id="One pair" readonly>
-        </div>
-        <div class="Score">
-            <label for="Two pairs">Two pairs</label>
-            <input value="0" type="number" id="Two pairs" readonly>
-        </div>  
-        <div class="Score">
-            <label for="Three of a kind">Three of a kind</label>
-            <input value="0" type="number" id="Three of a kind" readonly>
-        </div>
-        <div class="Score">
-            <label for="Four of a kind">Four of a kind</label>
-            <input value="0" type="number" id="Four of a kind" readonly>
-        </div>
-        <div class="Score">
-            <label for="Full house">Full house</label>
-            <input value="0" type="number" id="Full house" readonly>
-        </div>
-        <div class="Score">
-            <label for="Small straight">Small straight</label>
-            <input value="0" type="number" id="Small straight" readonly>
-        </div>
-        <div class="Score">
-            <label for="Large straight">Large straight</label>
-            <input value="0" type="number" id="Large straight" readonly>
-        </div>
-        <div class="Score">
-            <label for="Chance">Chance</label>
-            <input value="0" type="number" id="Chance" readonly>
-        </div>
-        <div class="Score">
-            <label for="Yatzy">Yatzy</label>
-            <input value="0" type="number" id="Yatzy" readonly>
-        </div>
-        <div class="Sum">
-            <label for="Sum">Sum</label>
-            <input value="0" type="number" id="Sum" readonly>
-        </div>
-        <div class="Bonus">
-            <label for="Bonus">Bonus</label>
-            <input value="0" type="number" id="Bonus" readonly>
-        </div>
-        <div class="Total">
-            <label for="Total">Total</label>
-            <input value="0" type="number" id="Total" readonly>
-        </div> 
-  
-      </div>
     </div>
-  </body>
+    <script src="Yatzy.js"></script>
+</body>
+
 </html>
