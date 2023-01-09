@@ -1,0 +1,22 @@
+doctype html
+html
+    head
+        title Express-app 3
+        script(src='index.js')
+        style 
+            include index.css
+    body
+        form(method="post")
+            input#navn(type="text" name="navn")
+            input#mobil(type="number" name="mobil")
+            button#submit(formaction="/add" type="submit") Tilføj
+            button#update(hidden name="update" formaction="/update" type="submit" onclick="update.hidden = true" value="") Opdater
+        select#personer(name="" multiple onchange="navn.value = this.value.split('.')[0]; mobil.value = this.value.split('.')[1]; update.hidden = false; update.value = this.selectedIndex")
+            each p of personer
+                option(value=""+p.navn + "." + p.mobil)= p.navn + " " + p.mobil
+
+                // I linje 12 sættes post funktion med /add på knappen Tilføj
+                // I linje 13 sættes post funktion med /update på knappen Opdater. Men knappen er skjult pga. hidden. 
+                // Efter der er blevet klikket på tilføj knappen en enkelt gang, vises Opdater knappen
+                // er i tvivl omkring linje 14
+

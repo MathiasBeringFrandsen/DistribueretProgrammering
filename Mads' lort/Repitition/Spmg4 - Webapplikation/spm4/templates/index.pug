@@ -1,0 +1,40 @@
+doctype html
+html
+    script.
+        async function post(url, objekt) {
+            const respons = await fetch(url, {
+                method: "POST",
+                body: JSON.stringify(objekt),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            if (respons.status !== 201) // Created
+                throw new Error(respons.status);
+            return await respons.text();
+        }
+
+        let clickfunction = async () => {
+                try {
+                    let navn = document.getElementById("navn").value;
+                    let adresse = document.getElementById("adresse").value;
+
+                    await post("http://localhost:8080/", {navn : navn, adresse : adresse});
+                    window.location.href = "http://localhost:8080/";
+                } catch (e) {
+                    console.log("Fejl");
+                }
+            }
+    head
+        title Express-app 3
+        script(src='index.js')
+    body
+        div
+            input(id="navn" type="text" placeholder="Navn:")
+            input(id="adresse" type="text" placeholder="Adresse:")
+            button(onclick='clickfunction()')
+        
+        div     
+            ul
+                each person in gemtePersoner
+                    li= person.navn + " " + person.adresse

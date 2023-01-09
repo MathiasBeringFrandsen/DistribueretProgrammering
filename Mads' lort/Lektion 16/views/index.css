@@ -1,0 +1,18 @@
+td{
+    min-width: 20px;
+}
+.frontTD{
+    background-color: gold;
+}
+
+.tdBesked, .frontTD, button {
+    border: 1px solid black;
+    text-align: center;
+    width: 150px;
+}
+
+.tdBesked, .frontTD, table {
+    border-collapse: collapse;
+}
+
+

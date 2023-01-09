@@ -1,0 +1,10 @@
+head 
+    title Add besked 
+
+body 
+    form(action="/addBesked", method="post")
+        td Navn:
+            input(type="text", name="navn")
+        td Besked: 
+            input(type="text", name="tekst")
+        input(type="submit", value="Send") 
