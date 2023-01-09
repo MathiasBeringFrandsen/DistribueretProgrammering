@@ -12,18 +12,19 @@ async function post(url, objekt) {
     body: JSON.stringify(objekt),
     headers: { "Content-Type": "application/json" },
   });
-  if (respons.status !== 201)
-    // Created
-    throw new Error(respons.status);
+  // if (respons.status !== 201)
+  //   // Created
+  //   throw new Error(respons.status);
   return await respons.text();
 }
 
 function addOnClick() {
   const btn = document.querySelector('.tilfoj');
-  btn.addEventListener("click", () => {
+  btn.addEventListener("click", async () => {
     let navn = document.getElementById("navn").value;
     let adresse = document.getElementById("adresse").value;
-    post("http://localhost:8080/", {navn : navn, adresse : adresse});
+    await post("http://localhost:8080/", {navn : navn, adresse : adresse});
+    window.location.href = "http://localhost:8080/";
   });
 }
 
