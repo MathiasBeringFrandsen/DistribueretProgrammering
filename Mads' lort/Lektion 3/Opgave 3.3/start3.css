@@ -1,0 +1,12 @@
+.grid-container {
+    display: inline-grid;
+    grid-template-columns: 100px auto;
+    grid-template-rows: 100px 100px;
+}
+
+.grid-item2, .grid-container2 {
+    display: inline-grid;
+    grid-template-columns: 20px 20px 20px;
+    border: 2px solid blue;
+    border-collapse: collapse;
+}
