@@ -4,13 +4,15 @@ html
         title Express-app 3
         script(src='index.js' defer)
     body
-        input(type="text" name = "navn")
-        input(type="text" name = "adresse")
+        input(type="text" name = "navn" id="navn")
+        input(type="text" name = "adresse" id="adresse")
         button(type="button" class="tilfoj") Tilføj
 
         table(style='width:50%', border='1' id="kartotek")
-            tr 
+            tr
                 th Navn
                 th Adresse 
-
-    
+                each person in personer 
+                    tr
+                        td=person.name 
+                        td=person.adresse  
