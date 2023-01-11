@@ -16,3 +16,27 @@ async function post(url, objekt) {
     return await respons.text();
 }
 
+async function getRandomQuote() {
+    let quote = await get("https://www.tronalddump.io/random/quote");
+    document.getElementById("result").innerHTML = quote.value;
+    quote.tags.forEach(tag => {
+        const tagLink = document.createElement("a");
+        tagLink.innerHTML = tag;
+        tagLink.onclick = () => getQuotes(tag);
+        document.getElementById("tag").appendChild(tagLink);
+    });
+
+}
+
+async function getQuotes(tag) {
+    document.getElementById("tagQuotes").innerHTML = "";
+    const quotes = await get("https://www.tronalddump.io/search/quote?tag=" + tag);
+    quotes._embedded.quotes.forEach(quote => {
+        const newQuote = document.createElement("div");
+        newQuote.innerHTML = quote.value;
+        document.getElementById("tagQuotes").appendChild(newQuote);
+    })
+    console.log(quotes);
+}
+
+getRandomQuote();

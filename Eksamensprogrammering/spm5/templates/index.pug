@@ -4,15 +4,18 @@ html
         title Express-app 3
         script(src='index.js' defer)
     body
-        input(type="text" name = "navn" id="navn")
-        input(type="text" name = "tlfnummer" id="tlfnummer")
+        input(type="text" name ="navn" id="navn")
+        input(type="text" name ="tlfnummer" id="tlfnummer")
         button(type="button" class="tilfoj") Tilføj
+        input(type="text" name="nytnr" id="nytnr")
 
         table(style='width:50%', border='1' id="kartotek")
             tr
                 th Navn
                 th Tlfnummer 
-                each person in personer 
+                each person, index  in personer 
                     tr
                         td=person.name 
-                        td=person.tlfnummer  
+                        td=person.tlfnummer
+                        td
+                            button(type="button" class="change" onclick="changenumber("+ index + ")") Skift

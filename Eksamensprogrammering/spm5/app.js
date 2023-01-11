@@ -22,9 +22,14 @@ app.post('/', function (request, response) {
         request.session.personer = [];
     }
     request.session.personer.push({name : request.body.navn, tlfnummer : request.body.tlfnummer});
-    console.log(request.session.personer);
     response.status(201).end();
 });
+
+app.put('/', function (request, response){
+    console.log("Im here");
+    request.session.personer[request.body.index].tlfnummer = request.body.newNumber;
+    response.status(200).end();
+})
 
 app.listen(8080);
 

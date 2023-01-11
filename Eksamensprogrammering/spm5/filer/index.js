@@ -16,6 +16,17 @@ async function post(url, objekt) {
     return await respons.text();
 }
 
+async function put(url, objekt) {
+    const respons = await fetch(url, {
+        method: "PUT",
+        body: JSON.stringify(objekt),
+        headers: { 'Content-Type': 'application/json' }
+    });
+    if (respons.status !== 200) // OK
+        throw new Error(respons.status);
+    return await respons.text();
+}
+
 function addOnClick() {
     const btn = document.querySelector('.tilfoj');
     btn.addEventListener("click", async () => {
@@ -26,8 +37,10 @@ function addOnClick() {
     });
   }
 
-  function changenumber() {
-    
+  async function changenumber(index) {
+    let newNumber = document.getElementById("nytnr").value;
+    await put("http://localhost:8080/", {index : parseInt(index), newNumber});
+    window.location.href = "http://localhost:8080/";
   }
   
   addOnClick();
