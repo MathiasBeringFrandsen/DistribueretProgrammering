@@ -16,18 +16,3 @@ async function post(url, objekt) {
     return await respons.text();
 }
 
-function addOnClick() {
-    const btn = document.querySelector('.tilfoj');
-    btn.addEventListener("click", async () => {
-      let navn = document.getElementById("navn").value;
-      let tlfnummer = document.getElementById("tlfnummer").value;
-      await post("http://localhost:8080/", {navn : navn, tlfnummer : tlfnummer});
-      window.location.href = "http://localhost:8080/";
-    });
-  }
-
-  function changenumber() {
-    
-  }
-  
-  addOnClick();

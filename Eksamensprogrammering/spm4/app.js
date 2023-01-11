@@ -22,8 +22,6 @@ app.post('/', function (request, response) {
         request.session.personer = [];
     }
     request.session.personer.push({name : request.body.navn, adresse: request.body.adresse});
-    console.log(request.session.personer);
-    response.redirect('/');
     response.status(201).end();
 });
 

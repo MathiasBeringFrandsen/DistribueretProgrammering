@@ -12,9 +12,9 @@ async function post(url, objekt) {
     body: JSON.stringify(objekt),
     headers: { "Content-Type": "application/json" },
   });
-  // if (respons.status !== 201)
-  //   // Created
-  //   throw new Error(respons.status);
+  if (respons.status !== 201)
+    // Created
+    throw new Error(respons.status);
   return await respons.text();
 }
 
